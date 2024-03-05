@@ -1,0 +1,12 @@
+:root {
+    --encore-dark: #1d1d1b;
+    --encore-dark-highlight: #3c3c39;
+    --encore-light: #ffffff;
+    --encore-light-highlight: #bababa;
+    --encore-red: #e71d33;
+    --encore-red-highlight: #e55162;
+
+    --encore-costing-green: #98bf90;
+    --encore-costing-grey: #cbcbcb;
+    --encore-costing-blue: #acc9d9;
+}
