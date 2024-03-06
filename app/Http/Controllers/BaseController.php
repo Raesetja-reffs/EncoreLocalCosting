@@ -54,7 +54,7 @@ class BaseController extends Controller
         $response = curl_exec($curl);
         curl_close($curl);
     
-        
+        // dd($response);
 
         if ($response) {
             $response = json_decode($response, true);

@@ -155,11 +155,12 @@ class CostingController extends Controller
         $Key = env('API_KEY');
         $GUID = env('COMPANY_GUID');
         $productDesc = $request->get('productDesc');
+        $intUserID = Session::get('UserId');
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => $IP."getProducts",
+            CURLOPT_URL => $IP."V2/getProducts",
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -169,7 +170,8 @@ class CostingController extends Controller
             CURLOPT_CUSTOMREQUEST => 'GET',
             CURLOPT_POSTFIELDS =>'{
                 "companyid": "'.$GUID.'",
-                "productDesc": "'.$productDesc.'"
+                "productDesc": "'.$productDesc.'",
+                "intUserID": "'.$intUserID.'"
             }',
             CURLOPT_HTTPHEADER => array(
                 "Authorization: Key=$Key",
